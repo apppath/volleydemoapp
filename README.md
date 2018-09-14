@@ -1,2 +1,2 @@
 # Volley Android
-Android volley is a networking library was introduced to make networking calls much easier, faster without writing tons of code. By default all the volley network calls works asynchronously, so we don't have to worry about using asynctask anymore
+Volley automatically schedule all network requests. It means that Volley will be taking care of all the network requests your app executes for fetching response or image from web. Volley provides transparent disk and memory caching. Volley provides powerful cancellation request API
