@@ -66,7 +66,7 @@ StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.B
                     @Override
                     public void onResponse(String response) {
 
-                        Toast = MDToast.makeText(AddActivity.this,
+                        Toast.makeText(AddActivity.this,
                                 "Successfully User Saved",
                                 Toast.LENGTH_SHORT).show;
                     }
