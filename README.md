@@ -4,8 +4,10 @@ Volley automatically schedule all network requests. It means that Volley will be
 ## Volley Dependency
 Volley to your project is to add the following dependency to your app's build.gradle file
 
-```gradle
+```build.gradle
+
     implementation 'com.android.volley:volley:1.1.1'
+    
 ```
 
 ## Use Singleton Pattern Configration Volley AppConfig.java
