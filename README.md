@@ -12,7 +12,7 @@ Volley to your project is to add the following dependency to your app's build.gr
 
 ## App Images
 
-<p align="left">
+<p align="center">
 
   <img src="https://github.com/apppath/volleydemoapp/blob/master/device-home-activity.png" width="250"/>
   <img src="https://github.com/apppath/volleydemoapp/blob/master/device-insert-activity.png" width="250"/>
