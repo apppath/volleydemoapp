@@ -55,3 +55,81 @@ public class AppConfig {
 
 
 ```
+
+## Send a simple request
+
+```java
+  
+StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.BASE_REGISTER_URL,
+                new Response.Listener<String>() {
+
+                    @Override
+                    public void onResponse(String response) {
+
+                        Toast = MDToast.makeText(AddActivity.this,
+                                "Successfully User Saved",
+                                Toast.LENGTH_SHORT).show;
+                    }
+                },
+
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.getMessage();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+
+                Map<String, String> params = new HashMap<>();
+                params.put(Key,Value);
+                return params;
+            }
+        };
+
+        AppConfig.getInstance(this).addToRequestQueue(stringRequest);
+```
+## Request JSON
+
+```java
+
+JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, Constants.BASE_USER_LIST_URL, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+
+                        try {
+
+                            usersArrayList = new ArrayList<>();
+                            JSONArray jsonArray = response.getJSONArray(Constants.KEY_JSON_ARRAY_ROOT_ITEM);
+
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                users = new Users();
+
+                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                users.setFirstName(jsonObject.getString(JSON_KEY));
+                                users.setAge(jsonObject.getInt(JSON_KEY));
+                                usersArrayList.add(users);
+
+                            }
+
+                            adapter = new UserAdapter(MainActivity.this, usersArrayList);
+                            recyclerView.setAdapter(adapter);
+
+                        } catch (Exception e) {
+                            e.getMessage();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                     error.getMessage();
+                    }
+                }
+        );
+
+        AppConfig.getInstance(this).addToRequestQueue(objectRequest);
+
+```
